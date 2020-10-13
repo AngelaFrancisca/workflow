@@ -22,6 +22,17 @@
 	</slot>
 </schema>
 
+<schema name="activityInformation.RemoveObserver" type="module.workflow.activities.UserInformation">
+	<slot name="user" layout="autoComplete" key="label.giveProcess.user"
+		bundle="WORKFLOW_RESOURCES">
+		<property name="labelField" value="username" />
+		<property name="format" value="${profile.fullName}" />
+		<property name="minChars" value="3" />
+		<property name="provider" value="org.fenixedu.bennu.core.presentationTier.renderers.autoCompleteProvider.UserAutoComplete" />
+		<property name="size" value="40" />
+	</slot>
+</schema>
+
 <schema name="activityInformation.ChangeQueue" type="module.workflow.activities.ChangeQueueInformation" bundle="META_WORKFLOW_RESOURCES">
 	<slot name="queue" layout="autoComplete" key="label.changeQueue">
 		<property name="labelField" value="name" />

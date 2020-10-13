@@ -44,7 +44,8 @@ public class ReleaseProcess<T extends WorkflowProcess> extends WorkflowActivity<
 
     @Override
     public boolean isActive(T process, User user) {
-        return process.isTicketSupportAvailable() && process.getCurrentOwner() != null && process.getCurrentOwner() == user;
+        return process.isTicketSupportAvailable() && !process.isUserObserver(user)
+                && (process.getCurrentOwner() != null || process.getCurrentOwner() == user);
     }
 
     @Override
